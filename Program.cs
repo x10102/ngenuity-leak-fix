@@ -52,6 +52,12 @@ Console.WriteLine("Press any key to begin...");
 Console.WriteLine(new string('=', 75));
 Console.ReadKey();
 
+if (!PatcherUtils.CheckDevMode())
+{
+    Console.ReadKey();
+    return;
+}
+
 // 1. Copy the install out of the locked down store apps folder and into a temp directory
 
 var installFolder = findNGenInstallFolder();
